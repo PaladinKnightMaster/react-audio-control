@@ -1,38 +1,122 @@
-.App {
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.buttons-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.button-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.round-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  position: relative;
+}
+
+.round-button svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+.round-button:hover,
+.round-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.75em rgba(0, 123, 255, 0.6);
+  transform: scale(1.1);
+}
+
+.round-button.stop {
+  background-color: black;
+}
+
+.round-button.record {
+  background-color: red;
+}
+
+.round-button.review {
+  background-color: #2196f3;
+}
+
+.button-label {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+textarea.focused {
+  border: 2px solid green;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.radio-group label {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
   color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 350px) {
+  .buttons-group {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .button-wrapper {
+    margin-bottom: 15px;
   }
 }
